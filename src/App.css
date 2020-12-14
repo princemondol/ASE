@@ -1,0 +1,44 @@
+body {
+	background-color: #1c7ac2 !important;
+}
+
+.searchBar{
+	background-color:#2580c6;
+	border: 1px solid #5da0d3;
+	border-radius:8px;
+}
+
+.searchBar input,button{
+	background-color: transparent;
+	color: #adcade;
+	border:none;
+}
+
+.card-img-top{
+	height: 275px !important;
+	border-top-left-radius: 8px !important;
+	border-top-right-radius: 8px !important;
+
+}
+
+.card {
+	border: none !important;
+	border-radius: 8px !important;
+}
+
+.searchBar input:focus,button:focus{
+	outline:none !important;
+}
+
+.searchBar input::placeholder {
+	color: #afbfdc;
+}
+
+.card-text{
+	font-weight: 700;
+}
+
+.loadMoreButton {
+	color : white !important;
+	font-weight: 700;
+}
