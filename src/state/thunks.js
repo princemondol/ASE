@@ -5,7 +5,7 @@ export const searchAnime = () => async(dispatch, getState) => {
 	
 	try {		
 		dispatch(loading());		
-		const response = await fetch(`/v3/search/anime?q=${state.searchQuery}&limit=16`);
+		const response = await fetch(`https://api.jikan.moe/v3/search/anime?q=${state.searchQuery}&limit=16`);
 		const searchResults = await response.json();
 		response.status === 200 ? dispatch(searchResultsSuccess(searchResults)) : dispatch(searchResultsFailure(response.status+`1`));
 	} catch (e) {
@@ -18,7 +18,7 @@ export const loadMore = () => async(dispatch, getState) => {
 	const state = getState();
 	try {
 		dispatch(loading());		
-		const response = await fetch(`/v3/search/anime?q=${state.searchQuery}&limit=16&page=${state.searchResults.page + 1}`);
+		const response = await fetch(`https://api.jikan.moe/v3/search/anime?q=${state.searchQuery}&limit=16&page=${state.searchResults.page + 1}`);
 		const moreResults = await response.json();
 		response.status === 200 ? dispatch(loadMoreResults(moreResults)) : dispatch(searchResultsFailure(response.status));
 	} catch (e) {
